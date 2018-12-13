@@ -1,0 +1,21 @@
+most normal function declarations go 
+
+int callme(int a, int b)
+
+however, if you're want to point a pointer to a function, then wrap it in pointer syntax 
+
+int (*callme)(int a, int b)
+
+andchange the function name to a pointer name
+
+int (*compare_cb)(int a, int b)        <--final form
+
+the variable name for the pointer is compare_cb, and use it just like a function
+it's just a function with a different name
+
+int (*tester)(int a, int b) = sorted_order; 
+pritnf("TEST:%d is the same as %d\n", tester(2,3), sorted_order(2,3)); 
+
+This will work even if the function pointer returns a pointer to something 
+
+you still have the issue that it's hard to pass them a parameter to the function it references. you need to use typdef to make it happen
