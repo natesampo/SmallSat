@@ -36,7 +36,7 @@ void loop() {
   Wire.endTransmission();      // stop transmitting
 
   // step 4: request reading from sensor
-  Wire.requestFrom(112, 2);    // request 2 bytes from slave device #112
+  Wire.requestFrom(0x29, 2);    // request 2 bytes from slave device #112
 
   // step 5: receive reading from sensor
   if (2 <= Wire.available()) { // if two bytes were received
@@ -79,5 +79,3 @@ void changeAddress(byte oldAddress, byte newAddress)
 }
 
 */
-
-
